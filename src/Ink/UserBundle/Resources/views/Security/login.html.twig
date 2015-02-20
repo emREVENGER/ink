@@ -1,0 +1,50 @@
+{% extends 'InkHomeBundle::base.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block title %}Compte{% endblock %}
+
+{% block home %}{% endblock %}
+{% block search %}{% endblock %}
+{% block team %}{% endblock %}
+{% block account %}class="active"{% endblock %}
+
+{% block body %}
+
+    <section class="white secPad page-section">
+        <div class="container">
+
+            <div class="col-sm-6">
+
+                <div class="heading text-center">
+                    <h2>Connection</h2>
+                </div>
+                <form action="{{ path('fos_user_security_check') }}" method="POST">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                    <div class="form-group">
+                        <label for="username">{{ 'security.login.username'|trans }}</label>
+                        <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">{{ 'security.login.password'|trans }}</label>
+                        <input type="password" class="form-control" id="password" name="_password" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                    </div>
+                    <button type="submit" id="_submit" class="btn btn-lg btn-primary" name="_submit">{{ 'security.login.submit'|trans }}</button>
+                </form>
+            </div>
+
+
+            <div class="col-sm-6">
+
+                <div class="heading text-center" style="padding-top: 100px;">
+                    <h2><a href="{{ path('fos_user_registration_register') }}" style="color: #000000;">Inscription</a></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

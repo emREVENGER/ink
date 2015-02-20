@@ -1,0 +1,143 @@
+{# InkData/HomeBundle/Resources/views/Default/index.html.twig #}
+{% extends 'InkHomeBundle::base.html.twig' %}
+
+{% block title %}Messagerie{% endblock %}
+
+{% block home %}{% endblock %}
+{% block search %}{% endblock %}
+{% block team %}{% endblock %}
+{% block message %}{% endblock %}
+{% block account %}{% endblock %}
+{% block body %}
+
+
+{% set nameUser = 'user' %}
+<section class="white secPad page-section">
+	<div class="container">
+		<div class="heading text-center">
+			{{ form_start(form, {'attr': {'class': 'form-horizontal new_msg'}}) }}
+
+			{# Les erreurs générales du formulaire. #}
+			{{ form_errors(form) }}
+
+
+			<div class="form-group">
+				{# Génération de l'input. #}
+				{{ form_widget(form.new, {'attr': {'class': 'btn btn-danger'}}) }}
+			</div>
+
+			{# Fermeture de la balise <form> du formulaire HTML #}
+			{{ form_end(form) }}
+		</div>
+
+
+		<div role="tabpanel">
+
+			<div style="overflow-y: auto; height: 500px; padding: 0;"class="col-sm-3">
+
+				<ul class="nav tablist" role="tablist">
+					{% for line in discussion %}
+
+					{% if line.getIdUser1 == id%}
+					{% set idUser = line.getIdUser2 %}
+					{% else %}
+					{% set idUser = line.getIdUser1 %}
+					{% endif %}
+
+					{% for user in users %}
+					{% if user.getId == idUser %}
+						{# [user.getFirstnameUser, user.getLastnameUser]|join(' ') #}
+					{% set nameUser = ([user.getFirstnameUser, user.getLastnameUser]|join(' ')) %}
+					{% endif %}
+					{% endfor%}
+
+					<li role="presentation" class="messagerie {% if loop.index == 1 %}active{% endif %}"><a id="{{ line.getIdConversation }}" aria-controls="home" role="tab" data-toggle="tab">{{ nameUser }}</a></li>
+
+					{% endfor %}
+				</ul>
+
+			</div>
+
+			<div class="col-sm-8 col-sm-offset-1 tab-content message">
+
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="conversation1">
+						<div class="message-content" id="message1">
+							<div id="conversation">
+								{% include 'InkHomeBundle:Default:discussion.html.twig' with {'messages' : messages, 'users' : users}  %}
+							</div>
+						</div>
+						<div class="heading text-center">
+							{{ form_start(form, {'attr': {'class': 'form-horizontal new_msg'}}) }}
+
+							{# Les erreurs générales du formulaire. #}
+							{{ form_errors(form) }}
+
+
+							<div class="form-group">
+								{# Génération de l'input. #}
+								{{ form_widget(form.new, {'attr': {'class': 'btn btn-danger'}}) }}
+							</div>
+
+							<div class="form-group">
+								{# Génération de l'input. #}
+								<button type="submit" id="{{ form.new.vars.id }}" class="btn btn-danger">Répondre</button>
+							</div>
+							{# Fermeture de la balise <form> du formulaire HTML #}
+							{{ form_end(form) }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}
+
+{% block js %}
+<script>
+$( document ).ready(function() {
+
+	var usersArray = new Array();
+	{% for user in users %}
+	usersArray[{{ user.getId }}] = "{{ user.getFirstnameUser }}";
+	{% endfor%}
+
+
+	{% for line in discussion %}
+
+	{% if loop.first == true %}
+	$('#{{ form.new.vars.id }}').val({{ line.getIdConversation }});
+	{% endif %}
+
+	$("#{{ line.getIdConversation }}").click(function(usersArray, query){
+
+		$.ajax({
+			type: "GET",
+			url: "{{ path('ink_data_home_ajaxdiscussion')}}",
+			data: 'id=' + {{ line.getIdConversation }} ,
+			dataType :'html',
+			success: function(data){
+				$('#{{ form.new.vars.id }}').val({{ line.getIdConversation }});
+				$('#conversation').empty();
+				$('#conversation').html(data);
+			},
+			error : function(resultat, statut, erreur){
+				$('#conversation').empty();
+				$('#conversation').html("<p>"+erreur+"</p>");
+			}
+		});
+	});
+	{% endfor%}
+
+
+	$('#button-message').click(function(usersArray, query){
+		//$('.modal-body').html( $('#button-message').val() );
+	});
+
+});
+</script>
+{% endblock %}

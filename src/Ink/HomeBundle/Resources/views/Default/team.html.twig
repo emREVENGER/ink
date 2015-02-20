@@ -1,0 +1,101 @@
+{# InkData/HomeBundle/Resources/views/Default/index.html.twig #}
+{% extends 'InkHomeBundle::base.html.twig' %}
+
+{% block title %}Team{% endblock %}
+
+{% block home %}{% endblock %}
+{% block search %}{% endblock %}
+{% block team %}class="active"{% endblock %}
+{% block account %}{% endblock %}
+{% block body %}
+
+
+
+<!--Portfolio-->
+<section class="page-section section appear clearfix secPad white">
+    <div class="container">
+        <div class="heading text-center">
+            <!-- Heading -->
+            <h2>Notre Equipe</h2>
+            <p>Venez découvrir les membres de notre équipe, leurs expériences ou encore leur hobbies!</p>
+        </div>
+
+        <div class="row">
+            <div class="portfolio-items isotopeWrapper clearfix" id="2">
+
+                <article class="col-sm-6 isotopeItem">
+                    <div class="portfolio-item">
+                        <img src="{{ asset('bundles/inkdata/images/portfolio/img1.jpg') }}" alt="" />
+                        <div class="portfolio-desc align-center">
+                            <div class="folio-info">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                    <h5>N'Guyen Stephane</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="exampleModalLabel">Team member</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Aka: </p>
+                                <p>Description: </p>
+                                <p>Hobbies: </p>
+                                <p>Contact: </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <article class="col-sm-6 isotopeItem">
+                    <div class="portfolio-item">
+                        <img src="{{ asset('bundles/inkdata/images/portfolio/img2.jpg') }}" alt="" />
+                        <div class="portfolio-desc align-center">
+                            <div class="folio-info">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                    <h5>Yilmaz Emrah</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="col-sm-6 isotopeItem">
+                    <div class="portfolio-item">
+                        <img src="{{ asset('bundles/inkdata/images/portfolio/img3.jpg') }}" alt="" />
+                        <div class="portfolio-desc align-center">
+                            <div class="folio-info">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                    <h5>Bizet Benoit</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-sm-6 isotopeItem">
+                    <div class="portfolio-item">
+                        <img src="{{ asset('bundles/inkdata/images/portfolio/img4.jpg') }}" alt="" />
+                        <div class="portfolio-desc align-center">
+                            <div class="folio-info">
+                                <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                    <h5>Tsan Thimotey</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

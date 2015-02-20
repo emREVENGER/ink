@@ -1,0 +1,48 @@
+{% extends 'InkHomeBundle::base.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block body %}
+
+<section class="white secPad page-section">
+	<div class="container">
+
+
+
+		<div class="col-sm-6">
+
+			<div class="heading text-center" style="padding-top: 100px;">
+				<h2><a href="{{ path('fos_user_registration_register') }}" style="color: #000000;">Connection</a></h2>
+			</div>
+		</div>
+		<div class="col-sm-6">
+
+			<div class="heading text-center">
+				<h2>Inscription</h2>
+			</div>
+			<form action="{{ path('fos_user_security_check') }}" method="POST">
+
+				<div class="form-group">
+					<label for="username"></label>
+					<input type="text" class="form-control" id="username" name="_username" value="" required="required" />
+				</div>
+				<div class="form-group">
+					<label for="username"></label>
+					<textarea class="form-control" id=""></textarea>
+
+				</div>
+				<!-- Liste  statut -->
+				<div class="form-group">
+					<label for="who"></label>
+					<select class="form-control" id="">
+						<option value="1" selected>Classique</option>
+						<option value="2">Tatoueur</option>
+						<option value="3">Salon de tatouage</option>
+					</select>
+				</div>
+				
+				<button type="submit" id="_submit" class="btn btn-lg btn-primary" name="_submit">{{ 'security.register.submit'|trans }}</button>
+			</form>
+		</div>
+	</div>
+</section>
+{% endblock %}

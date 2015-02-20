@@ -1,0 +1,42 @@
+ink_data_home_homepage:
+    path:     /
+    defaults: { _controller: InkHomeBundle:Default:index }
+
+ink_data_home_indexpage:
+    path:     /index
+    defaults: { _controller: InkHomeBundle:Default:index }
+
+ink_data_home_searchpage:
+    path:     /search
+    defaults: { _controller: InkHomeBundle:Default:search }
+
+ink_data_home_teampage:
+    path:     /team
+    defaults: { _controller: InkHomeBundle:Default:team }
+
+ink_data_home_accountpage:
+    path:     /account
+    defaults: { _controller: InkHomeBundle:Default:account }
+
+ink_data_home_messagepage:
+    path:     /message
+    defaults: { _controller: InkHomeBundle:Default:message }
+
+ink_data_home_connectionpage:
+    path:     /connection
+    defaults: { _controller: InkHomeBundle:Default:connection }
+
+ink_data_home_ajaxdiscussion:
+    path:     /ajaxdiscussion
+    defaults: { _controller: InkHomeBundle:Default:ajaxdiscussion }
+    requirements:
+        _method: GET
+
+ink_data_home_sendpage:
+    path:     /send
+    defaults: { _controller: InkHomeBundle:Default:send }
+
+
+ink_data_home_photopage:
+    path:     /photo
+    defaults: { _controller: InkHomeBundle:Default:photo }

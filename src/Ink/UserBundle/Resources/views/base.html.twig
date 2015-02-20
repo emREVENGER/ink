@@ -1,0 +1,156 @@
+{# Ink/HomeBundle/Resources/views/base.html.twig #}
+<!doctype html>
+<html lang="fr" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="WebThemez">
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]>
+		<script type="text/javascript" src="http://explorercanvas.googlecode.com/svn/trunk/excanvas.js"></script>
+	<![endif]-->
+    <link rel="stylesheet" href="{{ asset('bundles/inkdata/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/inkdata/css/isotope.css') }}" media="screen" />
+    <link rel="stylesheet" href="{{ asset('bundles/inkdata/js/fancybox/jquery.fancybox.css') }}" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/inkdata/css/da-slider.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/inkdata/css/styles.css') }}"/>
+    <!-- Owl Carousel Assets -->
+    <link href="{{ asset('bundles/inkdata/js/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('bundles/inkdata/css/styles.css') }}" />
+    <!-- Font Awesome -->
+    <link href="{{ asset('bundles/inkdata/font/css/font-awesome.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand scroll-top logo"><b>Ink ' Data</b></a>
+                </div>
+                <!--/.navbar-header-->
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav" id="mainNav">
+                        <li {% block home %}{% endblock %}><a href="index">Accueil</a></li>
+                        <li {% block search %}{% endblock %}><a href="search">Recherche</a></li>
+                        <li {% block team %}{% endblock %}><a href="team">La Team</a></li>
+                        <li {% block message %}{% endblock %}><a href="message">Messagerie <span class="badge">4</span></a></li>
+                        <li {% block account %}{% endblock %}><a href="account">Mon Compte</a></li>
+                        <li><a href="#">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a></li>
+                    </ul>
+                </div>
+                <!--/.navbar-collapse-->
+            </nav>
+            <!--/.navbar-->
+        </div>
+        <!--/.container-->
+    </header>
+    <!--/.header-->
+    <div id="#top"></div>
+
+    {% block body %}{% endblock %}
+
+    <!--Contact -->
+    <section id="contactUs" class="page-section secPad">
+        <div class="container">
+
+            <div class="row">
+                <div class="heading text-center">
+                    <h2>Restons en contact</h2>
+                    <p>N'hésitez pas à faire part de votre avis, que ce soit sur les fonctionnalités existantes ou pouvant être mis en place pour faciliter votre navigation. Tout l'équipe vous remercie pour votre visite.</p>
+                </div>
+            </div>
+
+            <div class="row mrgn30">
+
+                <form method="post" id="contactfrm" role="form">
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Entrer votre nom" title="Entrer votre nom (au moins 2 caracteres)">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Entrer votre email" title="Entrer une email valide">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="comments">Commentaires</label>
+                            <textarea name="comment" class="form-control" id="comments" cols="3" rows="5" placeholder="Entrer votre message…" title="Entrer votre message (au moins 10 caracteres)"></textarea>
+                        </div>
+                        <button name="submit" type="submit" class="btn btn-lg btn-primary" id="submit">Envoyer</button>
+                        <div class="result"></div>
+                    </div>
+                </form>
+                <div class="col-sm-4">
+                    <h4>Adresse:</h4>
+                    <address>
+                        Ink'Data<br>
+                        4 Rue du Dôme<br>
+                        Strasbourg, 67000 FRANCE
+                        <br>
+                    </address>
+                    <h4>Telehone:</h4>
+                    <address>
+                        (+33) 3-88-00-00-00<br>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+    <footer>
+        <div class="container">
+            <div class="social text-center">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-dribbble"></i></a>
+                <a href=""><i class="fa fa-flickr"></i></a>
+                <a href=""><i class="fa fa-github"></i></a>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </footer>
+    <section class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    Copyright 2015 | All Rights Reserved  -- Template by <a href="team">Ink'Data Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="#top" class="topHome"><i class="fa fa-chevron-up fa-2x"></i></a>
+
+    <script src="{{ asset('bundles/inkdata/js/modernizr-latest.js') }}"></script>
+    <script src="{{ asset('bundles/inkdata/js/jquery-1.8.2.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/inkdata/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/inkdata/js/jquery.isotope.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/inkdata/js/fancybox/jquery.fancybox.pack.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/inkdata/js/jquery.nav.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/inkdata/js/jquery.cslider.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/inkdata/js/custom.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/inkdata/js/owl-carousel/owl.carousel.js') }}"></script>
+
+    {% block js %}{% endblock %}
+
+</html>

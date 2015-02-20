@@ -1,0 +1,30 @@
+{% set nameUser = '' %}
+
+{% for message in messages %}
+
+	{% for user in users %}
+		{% if user.getId == message.getIdSender %}
+			{# [, user.getLastnameUser]|join(' ') #}
+			{% set nameUser = user.getLastnameUser %}
+		{% endif %}
+	{% endfor%}
+
+<div class="msg {% if loop.last == true %}last{% endif %}">
+	<div class="row zeroM">
+		<div class="col-sm-6 user-message">
+			<div>
+				<p class="user">{{ nameUser }}</p>
+			</div>
+		</div>
+		<div class="col-sm-6 date-message">
+			<div>
+				<p>{{ message.getDateTime|date('Y-m-d') }}</p>
+			</div>
+		</div>
+	</div>
+	<div class="row content-message">
+		<p>{{ message.getContent }}</p>
+	</div>
+</div>
+
+{% endfor%}

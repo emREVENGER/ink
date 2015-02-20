@@ -1,0 +1,53 @@
+{# Ink/HomeBundle/Resources/views/Default/index.html.twig #}
+{% extends 'InkHomeBundle::base.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block title %}Compte{% endblock %}
+
+{% block home %}{% endblock %}
+{% block search %}{% endblock %}
+{% block team %}{% endblock %}
+{% block account %}class="active"{% endblock %}
+{% block body %}
+
+
+
+<!--Account-->
+<section id="portfolio" class="page-section section appear clearfix secPad">
+    <div class="container">
+        <!--Left Field-->
+        <div class="col-sm-6">
+            <div class="heading text-center">
+                <!--Heading-->
+                <h2>Compte Tatoueur</h2>
+            </div>
+            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>Nom - Prenom
+            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}<a href="#"></a></p></br>mail
+
+            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>rue
+            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>ville
+            <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>telephone
+            <p>Tatoueurs affiliés:</p>
+            <p style="padding-left: 50px;"><a href="#">Tatoueur1</a></p>
+            <p style="padding-left: 50px;"><a href="#">Tatoueur1</a></p>
+            <p>Non Affilié/Affilié à un salon: <a href="#">???</a></p>
+        </div>
+        <!--Right Field-->
+        <div style="padding-top: 111px;" class="col-sm-6">
+            <p>Nombre modele: </p>
+            <p>Nombre galerie: </p>
+        </div>
+    </div>
+    <div class="heading text-center">
+        <!--Heading-->
+        <h2><a href="{{ path('ink_data_home_photopage') }}">Ajouter Galerie/Photo</a></h2>
+    </div>
+</section>
+<section class="secpad white">
+    <div class="heading text-center">
+        <!--Heading-->
+        <h2>Galeries</h2>
+    </div>
+</section>
+
+{% endblock %}

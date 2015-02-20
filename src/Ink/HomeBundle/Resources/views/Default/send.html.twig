@@ -1,0 +1,59 @@
+{# InkData/HomeBundle/Resources/views/Default/index.html.twig #}
+{% extends 'InkHomeBundle::base.html.twig' %}
+
+{% block title %}Messagerie{% endblock %}
+
+{% block home %}{% endblock %}
+{% block search %}{% endblock %}
+{% block team %}{% endblock %}
+{% block message %}{% endblock %}
+{% block account %}{% endblock %}
+{% block body %}
+
+
+{% set nameUser = 'user' %}
+<section class="white secPad page-section">
+	<div class="container">
+		<div class="heading text-center">
+			<h2>Nouveau Message</h2>
+			<p>{{ infos }}</p>
+		</div>
+		<div role="tabpanel">
+
+			{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+			<div class="form-group">
+
+				{# Affichage des erreurs pour ce champ précis. #}
+				{{ form_errors(form.user) }}
+
+				<div class="col-sm-6 col-sm-offset-3">
+					{# Génération de l'input. #}
+					{{ form_widget(form.user, {'attr': {'class': 'form-control'}}) }}
+				</div>
+			</div>
+
+			<div class="form-group">
+				{# Affichage des erreurs pour ce champ précis. #}
+				{{ form_errors(form.content) }}
+				<div class="col-sm-6 col-sm-offset-3 texta">
+					{# Génération de l'input. #}
+					{{ form_widget(form.content, {'attr': {'class': 'form-control'}}) }}
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-6 col-sm-offset-3">
+					{# Génération de l'input. #}
+					{{ form_widget(form.add, {'attr': {'class': 'btn btn-danger'}}) }}
+				</div>
+			</div>
+
+			{# Fermeture de la balise <form> du formulaire HTML #}
+			{{ form_end(form) }}
+
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,5 @@
+services:
+    ink_user.registration.form.type:
+        class: Ink\UserBundle\Form\Type\RegistrationFormType
+        tags:
+            - { name: form.type, alias: ink_user_registration }

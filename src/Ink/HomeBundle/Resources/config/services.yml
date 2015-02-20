@@ -1,0 +1,4 @@
+services:
+#    ink_home.example:
+#        class: Ink\HomeBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

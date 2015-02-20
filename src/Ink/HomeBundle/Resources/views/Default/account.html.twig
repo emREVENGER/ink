@@ -1,0 +1,52 @@
+{# Ink/HomeBundle/Resources/views/Default/index.html.twig #}
+{% extends 'InkHomeBundle::base.html.twig' %}
+
+{% block title %}Compte{% endblock %}
+
+{% block home %}{% endblock %}
+{% block search %}{% endblock %}
+{% block team %}{% endblock %}
+{% block account %}class="active"{% endblock %}
+{% block body %}
+
+
+
+<!--Account-->
+<section id="portfolio" class="page-section section appear clearfix secPad">
+    <div class="container">
+        <!--Left Field-->
+        <div class="col-sm-6">
+            <div class="heading text-center">
+                <!--Heading-->
+                <h2>Compte Tatoueur</h2>
+            </div>
+            <p>Nom - Prenom</p>
+            <p><a href="#">mail</a></p></br>
+
+            <p>rue</p>
+            <p>ville</p>
+            <p>telephone</p>
+            <p>Tatoueurs affiliés:</p>
+            <p style="padding-left: 50px;"><a href="#">Tatoueur1</a></p>
+            <p style="padding-left: 50px;"><a href="#">Tatoueur1</a></p>
+            <p>Non Affilié/Affilié à un salon: <a href="#">???</a></p>
+        </div>
+        <!--Right Field-->
+        <div style="padding-top: 111px;" class="col-sm-6">
+            <p>Nombre modele: </p>
+            <p>Nombre galerie: </p>
+        </div>
+    </div>
+    <div class="heading text-center">
+        <!--Heading-->
+        <h2><a href="{{ path('ink_data_home_photopage') }}">Ajouter Galerie/Photo</a></h2>
+    </div>
+</section>
+<section class="secpad white">
+    <div class="heading text-center">
+        <!--Heading-->
+        <h2>Galeries</h2>
+    </div>
+</section>
+
+{% endblock %}

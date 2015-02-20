@@ -1,0 +1,32 @@
+{# InkData/HomeBundle/Resources/views/Default/index.html.twig #}
+{% extends 'InkHomeBundle::base.html.twig' %}
+
+{% block title %}Image/Potfolio{% endblock %}
+
+{% block home %}{% endblock %}
+{% block search %}{% endblock %}
+{% block team %}{% endblock %}
+{% block message %}{% endblock %}
+{% block account %}{% endblock %}
+{% block body %}
+
+
+{% set nameUser = 'user' %}
+<section class="white secPad page-section">
+	<div class="container">
+		<div class="heading text-center">
+			<h2>Ajouter photo</h2>
+		</div>
+		<div role="tabpanel">
+			<form action="#" method="post" {{ form_enctype(form) }}>
+				{{ form_widget(form) }}
+
+				<input type="submit" value="Upload Document" />
+			</form>
+
+		</div>
+	</div>
+</section>
+
+
+{% endblock %}

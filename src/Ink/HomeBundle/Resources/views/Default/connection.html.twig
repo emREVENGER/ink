@@ -1,0 +1,71 @@
+{# InkData/HomeBundle/Resources/views/Default/connection.html.twig #}
+{% extends 'InkHomeBundle::base.html.twig' %}
+
+{% block title %}Connection{% endblock %}
+
+{% block home %}{% endblock %}
+{% block search %}{% endblock %}
+{% block team %}{% endblock %}
+{% block message %}class="active"{% endblock %}
+{% block account %}{% endblock %}
+{% block body %}
+
+
+<section class="white secPad page-section">
+	<div class="container">
+
+		<div class="col-sm-6">
+
+			<div class="heading text-center">
+				<h2>Connection</h2>
+			</div>
+			<form method="post" id="contactfrm" role="form">
+
+				<div class="form-group">
+					<label for="mail">Email</label>
+					<input type="email" class="form-control" name="mail" id="mail" placeholder="Entrer votre email" title="Entrer un email valide">
+				</div>
+				<div class="form-group">
+					<label for="password">Mot de passe</label>
+					<input type="password" class="form-control" name="password" id="password" placeholder="Entrer votre mot de passe" title="Entrer votre mot de passe">
+				</div>
+				<button name="submit" type="submit" class="btn btn-lg btn-primary" id="submit">Envoyer</button>
+				<div class="result"></div>
+			</form>
+
+		</div>
+
+		<div class="col-sm-6">
+
+			<div class="heading text-center">
+				<h2>Inscription</h2>
+			</div>
+			<form method="post" id="contactfrm" role="form">
+
+				<div class="form-group">
+					<label for="mail">Email</label>
+					<input type="email" class="form-control" name="mail" id="mail" placeholder="Entrer votre email" title="Entrer un email valide">
+				</div>
+				<div class="form-group">
+					<label for="password">Mot de passe</label>
+					<input type="password" class="form-control" name="password" id="password" placeholder="Entrer votre mot de passe" title="Entrer votre mot de passe">
+				</div>
+				<div class="form-group">
+					<label for="repassword">Confirmez mot de passe</label>
+					<input type="password" class="form-control" name="repassword" id="repassword" placeholder="Entrer votre mot de passe" title="Entrer votre mot de passe">
+				</div>
+				<button name="submit" type="submit" class="btn btn-lg btn-primary" id="submit">Envoyer</button>
+				<div class="result"></div>
+			</form>
+
+		</div>
+
+	</div>
+</section>
+
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
