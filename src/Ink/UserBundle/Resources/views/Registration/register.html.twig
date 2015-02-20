@@ -19,7 +19,13 @@
 			<div class="heading text-center">
 				<h2>Inscription</h2>
 			</div>
-			<form action="{{ path('fos_user_security_check') }}" method="POST">
+            <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+                {{ form_widget(form) }}
+                <div>
+                    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                </div>
+            </form>
+			<form action="{{ path('fos_user_registration_register') }}" method="POST">
 
 				<div class="form-group">
 					<label for="username"></label>
